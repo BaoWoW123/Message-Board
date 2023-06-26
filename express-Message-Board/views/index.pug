@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  ul 
+    each msg in messages
+      div
+        h2= msg.user
+        h3= msg.text
+        p= msg.added
