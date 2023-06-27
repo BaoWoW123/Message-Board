@@ -2,6 +2,8 @@ extends layout
 
 block content
   h1= title
+  div   
+    button(onclick="window.location.href='/new'") Send a message
   ul 
     each msg in messages
       div

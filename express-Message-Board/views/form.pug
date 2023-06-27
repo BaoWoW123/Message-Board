@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  div.formPage
+    h1= title
+    form(action="/new", method="post") 
+        label(for="input") Name
+        input(type="text" name='user') 
+        label(for="msg") Message   
+        textarea.msg(maxLength=300 name='text')
+        button(type="submit") Send message 
