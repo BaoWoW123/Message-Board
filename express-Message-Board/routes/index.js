@@ -1,5 +1,7 @@
+require('dotenv').config();
 var express = require('express');
 var router = express.Router();
+let mongoose = require('mongoose');
 const messages = [{
   text: 'Hi there!',
   user:'Amando',
@@ -9,6 +11,16 @@ const messages = [{
   user:'Charles',
   added: new Date(),
 }]
+
+mongoose.connect(process.env.mongodb_URI,{
+  useNewUrlParse: true,
+  useUnifiedTopology: true
+}).then(()=> {
+  console.log('Connected to MongoDB')
+}).catch(err => {
+  console.log(err)
+})
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Message Board', messages });

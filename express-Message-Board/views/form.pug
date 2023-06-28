@@ -5,7 +5,7 @@ block content
     h1= title
     form(action="/new", method="post") 
         label(for="input") Name
-        input(type="text" name='user') 
+        input(type="text" name='user' require) 
         label(for="msg") Message   
-        textarea.msg(maxLength=300 name='text')
+        textarea.msg(maxLength=300 name='text' require)
         button(type="submit") Send message 
